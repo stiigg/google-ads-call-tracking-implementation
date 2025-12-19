@@ -1,0 +1,11 @@
+{
+  "calls": [
+    {
+      "caller_number": "+15551234567",
+      "duration_seconds": 120,
+      "gclid": "CjwKCAiA1KL3BRA8EiwAzCfbQxyz123abc",
+      "source": "Google Ads",
+      "tag": "Appointment_Booked"
+    }
+  ]
+}

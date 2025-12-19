@@ -1,0 +1,11 @@
+{
+  "google_ads_integration": {
+    "enabled": true,
+    "auto_upload": true,
+    "conversion_window_days": 90
+  },
+  "notification_settings": {
+    "email_alerts": true,
+    "recipients": ["marketing@example.com"]
+  }
+}

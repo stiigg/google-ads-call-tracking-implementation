@@ -1,0 +1,22 @@
+{
+  "conversion_actions": [
+    {
+      "name": "Appointment_Booked",
+      "category": "DEFAULT",
+      "type": "UPLOAD_CLICKS",
+      "value_settings": {
+        "default_value": 0,
+        "always_use_default": true
+      }
+    },
+    {
+      "name": "Sale_Completed_Audiology",
+      "category": "DEFAULT",
+      "type": "UPLOAD_CLICKS",
+      "value_settings": {
+        "default_value": 0,
+        "always_use_default": false
+      }
+    }
+  ]
+}

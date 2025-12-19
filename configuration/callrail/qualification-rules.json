@@ -1,0 +1,67 @@
+{
+  "qualification_rules": {
+    "rule_name": "Standard Call Qualification for Healthcare",
+    "description": "Filters out spam, wrong numbers, and unqualified calls",
+    "automatic_qualification": {
+      "minimum_duration_seconds": 30,
+      "must_be_answered": true,
+      "exclude_voicemail": false,
+      "business_hours_only": false,
+      "first_time_caller_only": true
+    },
+    "exclusion_rules": {
+      "spam_detection": {
+        "enabled": true,
+        "known_spam_callers": [],
+        "repeated_hangups_threshold": 3
+      },
+      "duration_filters": {
+        "too_short_threshold_seconds": 15,
+        "exclude_if_below": true
+      },
+      "caller_type_filters": {
+        "exclude_existing_patients": true,
+        "exclude_vendors": true,
+        "exclude_internal_calls": true
+      }
+    },
+    "conversion_tags": [
+      {
+        "tag_name": "Appointment_Booked",
+        "auto_qualify": false,
+        "requires_manual_tag": true,
+        "google_ads_mapping": "customers/1234567890/conversionActions/987654321",
+        "conversion_value": 0
+      },
+      {
+        "tag_name": "Sale_Completed_Audiology",
+        "auto_qualify": false,
+        "requires_manual_tag": true,
+        "google_ads_mapping": "customers/1234567890/conversionActions/987654322",
+        "conversion_value": "variable",
+        "value_source": "manual_entry"
+      },
+      {
+        "tag_name": "High_Quality_Lead",
+        "auto_qualify": false,
+        "google_ads_mapping": null,
+        "internal_use_only": true
+      },
+      {
+        "tag_name": "Not_Qualified",
+        "auto_qualify": false,
+        "exclude_from_google_ads": true
+      }
+    ],
+    "business_hours": {
+      "timezone": "America/Los_Angeles",
+      "monday": {"open": "09:00", "close": "17:00"},
+      "tuesday": {"open": "09:00", "close": "17:00"},
+      "wednesday": {"open": "09:00", "close": "17:00"},
+      "thursday": {"open": "09:00", "close": "17:00"},
+      "friday": {"open": "09:00", "close": "17:00"},
+      "saturday": "closed",
+      "sunday": "closed"
+    }
+  }
+}
