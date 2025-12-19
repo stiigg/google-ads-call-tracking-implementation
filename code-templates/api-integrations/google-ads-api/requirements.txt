@@ -1,1 +1,8 @@
-google-ads==23.0.0
+# Google Ads API
+google-ads>=24.0.0
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# HTTP requests for CallRail API
+requests>=2.31.0
