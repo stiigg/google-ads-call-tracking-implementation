@@ -5,6 +5,7 @@
   "main": "upload-conversions.js",
   "license": "MIT",
   "dependencies": {
-    "csv-parser": "^3.0.0"
+    "csv-parser": "^3.0.0",
+    "google-ads-api": "^21.0.1"
   }
 }
