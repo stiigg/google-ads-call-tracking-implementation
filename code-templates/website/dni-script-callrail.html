@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallRail DNI Implementation Template</title>
+</head>
+<body>
+    <!-- Your website content -->
+    <header>
+        <h1>Your Business Name</h1>
+        <!-- Phone number that will be swapped by CallRail -->
+        <p>Call us today: <span class="callrail-phone-number">(555) 000-0000</span></p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Contact Us</h2>
+            <p>Get in touch at: <a href="tel:+15550000000" class="callrail-phone-number">(555) 000-0000</a></p>
+        </section>
+    </main>
+
+    <!-- CallRail DNI Script - Place before closing </body> tag -->
+    <script>
+      (function() {
+        // Configuration
+        var CALLRAIL_COMPANY_ID = 'YOUR_COMPANY_ID'; // Replace with your CallRail company ID
+        var CALLRAIL_TOKEN = 'YOUR_TOKEN'; // Replace with your swap token
+        
+        // Load CallRail swap script
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = '//cdn.callrail.com/companies/' + CALLRAIL_COMPANY_ID + '/' + CALLRAIL_TOKEN + '/12/swap.js';
+        
+        var entry = document.getElementsByTagName('script')[0];
+        entry.parentNode.insertBefore(script, entry);
+      })();
+    </script>
+
+    <!-- Optional: Manual GCLID capture for backup -->
+    <script>
+      // Capture GCLID from URL and store in localStorage
+      (function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var gclid = urlParams.get('gclid');
+        
+        if (gclid) {
+          // Store GCLID in localStorage for 90 days
+          var expiryDate = new Date();
+          expiryDate.setDate(expiryDate.getDate() + 90);
+          
+          localStorage.setItem('gclid', gclid);
+          localStorage.setItem('gclid_expiry', expiryDate.toISOString());
+          
+          console.log('GCLID captured and stored:', gclid);
+        } else {
+          console.log('No GCLID in URL');
+        }
+      })();
+    </script>
+</body>
+</html>
