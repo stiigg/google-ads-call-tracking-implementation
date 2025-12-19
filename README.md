@@ -30,15 +30,17 @@ Complete implementation guide for tracking phone calls from Google Ads through t
 2. **Setup Time**: 4-8 hours for complete implementation
 3. **Technical Level**: Intermediate (basic HTML/JavaScript knowledge helpful)
 
+[Full implementation guide →](docs/04-implementation-guide.md)
+
 ## 📚 Documentation
 
-- **Project Overview** - Understand what this system does
-- **Technical Architecture** - How all the pieces fit together
-- **Customer Journey Funnel** - Step-by-step user flow
-- **Implementation Guide** - Detailed setup instructions
-- **Testing Procedures** - Verify everything works
-- **HIPAA Compliance** - Healthcare-specific requirements
-- **Troubleshooting** - Common issues and solutions
+- [Project Overview](docs/01-project-overview.md) - Understand what this system does
+- [Technical Architecture](docs/02-technical-architecture.md) - How all the pieces fit together
+- [Customer Journey Funnel](docs/03-customer-journey-funnel.md) - Step-by-step user flow
+- [Implementation Guide](docs/04-implementation-guide.md) - Detailed setup instructions
+- [Testing Procedures](docs/05-testing-procedures.md) - Verify everything works
+- [HIPAA Compliance](docs/06-hipaa-compliance.md) - Healthcare-specific requirements
+- [Troubleshooting](docs/07-troubleshooting.md) - Common issues and solutions
 
 ## 🛠️ Technology Stack
 
@@ -47,67 +49,11 @@ Complete implementation guide for tracking phone calls from Google Ads through t
 - **Website**: HTML/JavaScript for DNI implementation
 - **Optional**: Google Tag Manager, CRM integration, automation tools
 
-## 💻 Implementation Overview
+## 💻 Code Examples
 
-### Core Components
+### DNI Script Installation (CallRail)
 
-1. **GCLID Capture**: Automatic tracking parameter from Google Ads
-2. **Dynamic Number Insertion**: Show unique tracking numbers to ad visitors
-3. **Call Attribution**: Link calls back to original ad clicks
-4. **Conversion Upload**: Send qualified conversions to Google Ads
-5. **Revenue Tracking**: Upload sale values for ROAS optimization
-
-### Three Call Source Scenarios
-
-**Scenario 1: Direct from Ad**
-- User clicks call extension or call-only ad
-- GCLID automatically captured by call platform
-- Direct attribution to campaign/keyword
-
-**Scenario 2: Website Click-to-Call**
-- User clicks Google Ad
-- Lands on website with GCLID in URL
-- DNI displays tracking number
-- Clicks/taps phone number to call
-- Call linked to GCLID from landing
-
-**Scenario 3: Manual Dial Later**
-- User clicks Google Ad
-- Sees tracking number on website
-- Manually dials number hours/days later
-- Call still attributed to original GCLID
-
-## 📈 Expected Results
-
-**Typical Implementation Outcomes:**
-- Week 1-2: System fully operational, initial data flowing
-- Week 3-4: 10-20% improvement in ROAS through initial optimizations
-- Week 5-8: 30-50% improvement as Smart Bidding learns
-- Week 9+: 50-100%+ improvement over baseline with mature optimization
-
-## 🔧 Quick Implementation Steps
-
-### 1. Google Ads Setup
-
-```text
-✓ Enable auto-tagging
-✓ Create conversion actions
-✓ Set up call extensions
-✓ Configure Smart Bidding (optional)
 ```
-
-### 2. Call Tracking Platform Setup
-
-```text
-✓ Create account (CallRail recommended)
-✓ Purchase tracking numbers
-✓ Configure call qualification rules
-✓ Set up Google Ads integration
-```
-
-### 3. Website Implementation
-
-```html
 <!-- Add before closing </body> tag -->
 <script>
   (function() {
@@ -119,68 +65,51 @@ Complete implementation guide for tracking phone calls from Google Ads through t
 </script>
 ```
 
-### 4. Testing & Validation
-
-```text
-✓ Test GCLID capture
-✓ Verify DNI number swap
-✓ Make test calls from ads
-✓ Confirm attribution in CallRail
-✓ Verify conversion upload to Google Ads
-```
-
-## 🏆 Use Cases & Case Studies
-
-### Audiology Clinic Example
-
-**Business Profile:**
-- Avg. hearing aid sale: $4,500
-- Monthly ad spend: $3,000
-- Industry: Healthcare
-
-**Before Implementation:**
-- Tracking: Phone call conversions only
-- Attribution: No revenue data
-- Bidding: Manual CPC
-- ROAS: Unknown
-
-**After Implementation:**
-- Week 4: Revenue tracking live
-- Week 8: Smart Bidding enabled
-- Week 12: ROAS = 375:1 ($11,250 revenue / $30 cost)
-- Outcome: Scaled budget to $10,000/month profitably
-
-## 📄 File Structure
-
-This repository will contain:
+### Python: Upload Conversions to Google Ads
 
 ```
-├── README.md                  # This file
-├── docs/                      # Detailed documentation
-├── code-templates/           # Implementation code
-│   ├── website/             # DNI scripts
-│   ├── api-integrations/    # Google Ads API
-│   └── automation/          # Helper scripts
-├── configuration/           # Config templates
-├── testing/                # Test procedures
-├── data-templates/         # Sample data files
-└── tools/                  # Utility scripts
+from google.ads.googleads.client import GoogleAdsClient
+
+def upload_conversion(gclid, conversion_action, conversion_time, value):
+    # See code-templates/api-integrations/google-ads-api/upload-conversions.py
+    pass
 ```
+
+[View all code examples →](code-templates/)
+
+## 📈 Expected Results
+
+**Typical Implementation Outcomes:**
+- Week 1-2: System fully operational, initial data flowing
+- Week 3-4: 10-20% improvement in ROAS through initial optimizations
+- Week 5-8: 30-50% improvement as Smart Bidding learns
+- Week 9+: 50-100%+ improvement over baseline with mature optimization
+
+## 🏆 Case Studies
+
+- [Audiology Clinic Implementation](case-studies/audiology-clinic-implementation.md) - $4,500 avg sale, 375:1 ROAS
+- [Dental Practice Setup](case-studies/dental-practice-setup.md) - Multi-location tracking
+- [Results Analysis](case-studies/results-analysis.md) - Before/after metrics
+
+## 🔧 Tools & Utilities
+
+- [GCLID Validator](tools/gclid-validator.py) - Verify GCLID format
+- [CSV Formatter](tools/csv-formatter.py) - Format data for Google Ads upload
+- [ROAS Analyzer](tools/roas-analyzer.py) - Calculate and visualize return on ad spend
 
 ## 🤝 Contributing
 
-Contributions welcome! This is an open-source project to help businesses implement proper call tracking.
+Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
-MIT License - Feel free to use and adapt for your projects
+MIT License - see [LICENSE](LICENSE) file
 
 ## 👤 Author
 
 **Christian Baghai**
 - GitHub: [@stiigg](https://github.com/stiigg)
-- Specialization: Digital Analytics (GA4/GTM) & Clinical Statistical Programming
-- Expertise: Google Ads conversion tracking, server-side tracking, data pipeline development
+- Specialization: Clinical statistical programming → Digital analytics (GA4/GTM)
 
 ## 🙏 Acknowledgments
 
@@ -191,8 +120,5 @@ MIT License - Feel free to use and adapt for your projects
 ## 📞 Support
 
 - Open an [Issue](https://github.com/stiigg/google-ads-call-tracking-implementation/issues)
-- Star this repo if you find it helpful!
-
----
-
-**Note**: This repository is actively being developed. Documentation and code templates will be added progressively. Check back for updates!
+- Read the [FAQ](docs/07-troubleshooting.md)
+- Check [Discussions](https://github.com/stiigg/google-ads-call-tracking-implementation/discussions)

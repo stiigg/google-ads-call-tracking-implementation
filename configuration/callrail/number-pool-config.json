@@ -1,0 +1,12 @@
+{
+  "pool_name": "Google Ads DNI Pool",
+  "quantity": 10,
+  "country": "US",
+  "tracking_source": "google_ads",
+  "swap_targets": [
+    {
+      "selector": ".callrail-phone-number",
+      "format": "(###) ###-####"
+    }
+  ]
+}

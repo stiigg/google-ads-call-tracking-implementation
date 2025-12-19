@@ -1,0 +1,10 @@
+{
+  "name": "google-ads-api-upload",
+  "version": "1.0.0",
+  "description": "Upload offline conversions to Google Ads",
+  "main": "upload-conversions.js",
+  "license": "MIT",
+  "dependencies": {
+    "csv-parser": "^3.0.0"
+  }
+}

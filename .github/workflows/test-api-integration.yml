@@ -1,0 +1,29 @@
+name: Test API Integration
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        cd code-templates/api-integrations/google-ads-api
+        pip install -r requirements.txt
+
+    - name: Run GCLID validator tests
+      run: |
+        cd tools
+        python -m pytest test_gclid_validator.py

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTM DNI Implementation Template</title>
+</head>
+<body>
+  <header>
+    <h1>Healthcare Practice</h1>
+    <p>Call us: <span class="ctm-phone-number">(555) 000-0000</span></p>
+  </header>
+
+  <main>
+    <p>Book an appointment at: <a href="tel:+15550000000" class="ctm-phone-number">(555) 000-0000</a></p>
+  </main>
+
+  <!-- CallTrackingMetrics DNI Script -->
+  <script>
+    (function() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://tracking.calltrackingmetrics.com/calls/your-script-id.js';
+      document.head.appendChild(script);
+    })();
+  </script>
+</body>
+</html>

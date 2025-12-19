@@ -1,0 +1,8 @@
+{
+  "strategy": "TARGET_ROAS",
+  "target_roas": 450,
+  "conversion_actions": [
+    "Appointment_Booked",
+    "Sale_Completed_Audiology"
+  ]
+}

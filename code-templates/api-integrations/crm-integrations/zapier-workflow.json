@@ -1,0 +1,13 @@
+{
+  "name": "Capture GCLID from Form Submission",
+  "steps": [
+    {
+      "app": "Webhooks",
+      "event": "Catch Hook"
+    },
+    {
+      "app": "Google Sheets",
+      "event": "Create Spreadsheet Row"
+    }
+  ]
+}

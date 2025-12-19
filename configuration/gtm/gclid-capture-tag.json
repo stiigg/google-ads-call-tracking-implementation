@@ -1,0 +1,6 @@
+{
+  "name": "GCLID Capture Tag",
+  "type": "html",
+  "html": "<script>/* GCLID capture script here */</script>",
+  "trigger": "All Pages"
+}
