@@ -82,6 +82,28 @@ Use the automation scripts in this repo for:
 
 **See: [Advanced Deployment Guide](docs/08-deployment.md)**
 
+## 📁 Repository Structure
+
+### Core Implementation (Start Here)
+- `code-templates/api-integrations/callrail/` - CallRail API integration scripts
+- `code-templates/api-integrations/google-ads-api/` - Google Ads conversion upload
+- `code-templates/automation/` - Production deployment scripts and cron jobs
+- `docs/09-callrail-simple-setup.md` - **⭐ Start here for 10-minute setup**
+
+### Optional Advanced Features (Skip Unless Needed)
+- `code-templates/api-integrations/crm-integrations/` - **⚠️ OPTIONAL:** CRM sync templates
+  - ⚠️ **Most users don't need this directory**
+  - Only for B2B businesses with 30+ day sales cycles
+  - Only if you already use HubSpot, Salesforce, or similar CRM
+  - **Read [crm-integrations/README.md](code-templates/api-integrations/crm-integrations/README.md) before using**
+
+### Documentation & Guides
+- `docs/` - Complete implementation guides and troubleshooting
+- `case-studies/` - Real-world implementation examples
+- `tools/` - Utility scripts for validation and analysis
+
+**If you're unsure whether you need CRM integration, you don't.** Start with the simple CallRail setup.
+
 ## 📊 Key Features
 
 - ✅ GCLID-based attribution linking ads to calls
@@ -245,19 +267,24 @@ Google Ad → Website → User writes down 555-100-0003
 ```
 code-templates/
 ├── api-integrations/
+│   ├── callrail/
+│   │   └── fetch-conversions.py       # CallRail API integration
 │   ├── google-ads-api/
 │   │   ├── upload-conversions.py      # Main upload logic
 │   │   └── requirements.txt           # Python dependencies
-│   └── callrail/
-│       └── fetch-conversions.py       # CallRail API integration
+│   └── crm-integrations/              # ⚠️ OPTIONAL - Most users skip this
+│       ├── README.md                  # Read this before using
+│       ├── hubspot-webhook-handler.js
+│       ├── salesforce-gclid-capture.apex
+│       └── zapier-workflow.json
 └── automation/
-    ├── scheduled-batch-upload.sh  # Cron job wrapper
+    ├── scheduled-batch-upload.sh      # Cron job wrapper
     └── utils/
-        ├── logging_config.py      # Centralized logging
-        └── state_manager.py       # Duplicate prevention
+        ├── logging_config.py          # Centralized logging
+        └── state_manager.py           # Duplicate prevention
 
 deployment/
-└── crontab.example               # Scheduling examples
+└── crontab.example                    # Scheduling examples
 ```
 
 ## 📊 Expected Results
@@ -344,6 +371,13 @@ MIT License - see [LICENSE](LICENSE) file
 - Location: Paris, France
 
 ## 🚀 Recent Updates
+
+### Version 2.2 (December 20, 2025)
+- ✅ **Reorganized repository structure to clarify optional CRM integrations**
+- ✅ **Added comprehensive CRM integrations README with decision tree**
+- ✅ **Added warning comments to all CRM integration code files**
+- ✅ **Added repository structure section to main README**
+- ✅ **Clarified that 90%+ of users don't need CRM integration**
 
 ### Version 2.1 (December 19, 2025)
 - ✅ **Major README overhaul with simplified explanations**
