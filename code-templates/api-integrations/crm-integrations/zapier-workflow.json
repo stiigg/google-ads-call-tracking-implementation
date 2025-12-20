@@ -1,4 +1,5 @@
 {
+  "_comment": "⚠️ OPTIONAL - This Zapier workflow is NOT required for basic CallRail → Google Ads setup. Use only if you need no-code CRM synchronization. Most businesses should use CallRail's direct Google Ads integration instead. Read code-templates/api-integrations/crm-integrations/README.md first.",
   "name": "Capture GCLID from Form Submission",
   "steps": [
     {
